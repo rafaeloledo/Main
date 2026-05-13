@@ -6,12 +6,14 @@
     "notes": [
         "Since Scoop uses pwsh.exe internally, to update PowerShell Core itself,",
         "run `scoop update pwsh` from Windows PowerShell, i.e. powershell.exe.",
+        "Or run the following command from any other shell prompt (e.g., CMD or WSL):",
+        "powershell.exe -Command \"scoop update pwsh\"",
         "",
         "Add PowerShell Core as a explorer context menu by running:",
-        "$dir\\install-explorer-context.reg",
+        "reg import \"$dir\\install-explorer-context.reg\"",
         "",
         "For file context menu, run:",
-        "$dir\\install-file-context.reg",
+        "reg import \"$dir\\install-file-context.reg\"",
         "",
         "Add Windows Terminal PowerShell Profile by running:",
         "powershell -ExecutionPolicy Bypass -File $dir\\install-profile.ps1"
@@ -63,6 +65,14 @@
         "Microsoft.PowerShell_profile.ps1",
         "profile.ps1"
     ],
+    "uninstaller": {
+        "script": [
+            "if ($cmd -eq 'uninstall') {",
+            "    reg import \"$dir\\uninstall-explorer-context.reg\" *> $null",
+            "    reg import \"$dir\\uninstall-file-context.reg\" *> $null",
+            "}"
+        ]
+    },
     "checkver": "github",
     "autoupdate": {
         "architecture": {

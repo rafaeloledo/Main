@@ -1,16 +1,16 @@
 {
-    "version": "2.57.2",
+    "version": "2.58.1",
     "description": "Declarative CLI version manager written in Go",
     "homepage": "https://aquaproj.github.io/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/aquaproj/aqua/releases/download/v2.57.2/aqua_windows_amd64.zip",
-            "hash": "e974550d0e412adeeff491bdc1790dc7bc61856eac207082aa82536f519de862"
+            "url": "https://github.com/aquaproj/aqua/releases/download/v2.58.1/aqua_windows_amd64.zip",
+            "hash": "2e46b7af0dc9962c1b9d6c92db4e39a983fdbfe22ac078e380e96a7338ade1de"
         },
         "arm64": {
-            "url": "https://github.com/aquaproj/aqua/releases/download/v2.57.2/aqua_windows_arm64.zip",
-            "hash": "0be5c3065239227888ed6e2bd72fb1100fe5253cadd7b4c5d8d23a9e04e61fd0"
+            "url": "https://github.com/aquaproj/aqua/releases/download/v2.58.1/aqua_windows_arm64.zip",
+            "hash": "80f8bdd83e23af49fc53fd36324e5f2a26687a70fb78f4e3385f5594f85468e7"
         }
     },
     "bin": "aqua.exe",

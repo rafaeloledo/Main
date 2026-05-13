@@ -1,0 +1,23 @@
+{
+    "version": "1.49.0",
+    "description": "A retro terminal music player inspired by Winamp.",
+    "homepage": "https://www.cliamp.stream",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/bjarneo/cliamp/releases/download/v1.49.0/cliamp-windows-amd64.exe#/cliamp.exe",
+            "hash": "89b07932c8dff09524af0c718c91a735cdeb02b3264a73764d578b36babad76e"
+        }
+    },
+    "bin": "cliamp.exe",
+    "checkver": {
+        "github": "https://github.com/bjarneo/cliamp"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/bjarneo/cliamp/releases/download/v$version/cliamp-windows-amd64.exe#/cliamp.exe"
+            }
+        }
+    }
+}

@@ -1,23 +1,23 @@
 {
-    "version": "1.73.5",
+    "version": "1.74.1",
     "description": "Sync files and directories to and from multiple cloud / FTP / HTTP hosters.",
     "homepage": "https://rclone.org",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/rclone/rclone/releases/download/v1.73.5/rclone-v1.73.5-windows-amd64.zip",
-            "hash": "201567c54304935112b06dfac4ad754786287fb5acfad8889feca8d1cdeba92b",
-            "extract_dir": "rclone-v1.73.5-windows-amd64"
+            "url": "https://github.com/rclone/rclone/releases/download/v1.74.1/rclone-v1.74.1-windows-amd64.zip",
+            "hash": "51326acc0d9cf60234aa5787d8da66a621430aa373542a6b35bad8a4a26ca43e",
+            "extract_dir": "rclone-v1.74.1-windows-amd64"
         },
         "32bit": {
-            "url": "https://github.com/rclone/rclone/releases/download/v1.73.5/rclone-v1.73.5-windows-386.zip",
-            "hash": "58ab1aa37253f1cf33d9c33970c2dd693a744e0ca7111b4bfad0396f79d400f3",
-            "extract_dir": "rclone-v1.73.5-windows-386"
+            "url": "https://github.com/rclone/rclone/releases/download/v1.74.1/rclone-v1.74.1-windows-386.zip",
+            "hash": "e2d76137a17a50a2145e5d3fab8acb4730d16c0722adef1ab201d9d6bbac6ce0",
+            "extract_dir": "rclone-v1.74.1-windows-386"
         },
         "arm64": {
-            "url": "https://github.com/rclone/rclone/releases/download/v1.73.5/rclone-v1.73.5-windows-arm64.zip",
-            "hash": "8805406a984115e7cfe3b021a20a983b7060a70f198484cf373d687b6f625923",
-            "extract_dir": "rclone-v1.73.5-windows-arm64"
+            "url": "https://github.com/rclone/rclone/releases/download/v1.74.1/rclone-v1.74.1-windows-arm64.zip",
+            "hash": "317d2080debf0d941b12efb3a327d06e5cc1815c1dc4d79cb3665811b29ed12f",
+            "extract_dir": "rclone-v1.74.1-windows-arm64"
         }
     },
     "pre_install": [

@@ -1,12 +1,12 @@
 {
-    "version": "17.10.2",
+    "version": "17.11.1",
     "description": "Free database schema discovery and comprehension tool",
     "homepage": "https://www.schemacrawler.com/",
     "license": "EPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/schemacrawler/SchemaCrawler-Installers/releases/download/v17.10.2/SchemaCrawler-17.10.2.msi",
-            "hash": "e73fad7e3a6fbcb9c42450a3f6fbec4163e628dd87d6cf80a9f097691927a761"
+            "url": "https://github.com/schemacrawler/SchemaCrawler-Installers/releases/download/v17.11.1/SchemaCrawler-17.11.1.msi",
+            "hash": "36544c9a6dbaec95cedf4451a6d25a1792d67b87f6b9cc9dbdbf7387fa23bc80"
         }
     },
     "extract_dir": "SchemaCrawler",
