@@ -2,23 +2,26 @@
 
 # Usage: powershell -ExecutionPolicy Bypass -File install-profile.ps1
 
-$packagesPath = "$env:LOCALAPPDATA\Packages"
-
-$scoopPath = $env:SCOOP.Replace('\','\\')
+$scoopPath = $env:SCOOP
 
 if (-not $scoopPath) {
     Write-Host "SCOOP environment variable is not set." -ForegroundColor Red
     exit 1
 }
 
-function Get-WindowsTerminalPath {
-    $wtPackages = Get-ChildItem -Path $packagesPath -Filter "Microsoft.WindowsTerminal_*" -Directory
-    if ($wtPackages.Count -eq 0) { return $null }
-    return $wtPackages[0]
-}
+$scoopPathEscaped = $scoopPath.Replace('\','\\')
 
 function Get-WindowsTerminalSettingsPath {
-    $wtPackage = Get-WindowsTerminalPath
+    $scoopWtPersist = Join-Path $scoopPath "persist\windows-terminal\settings\settings.json"
+    if (Test-Path $scoopWtPersist) { return $scoopWtPersist }
+
+    $scoopWtCurrent = Join-Path $scoopPath "apps\windows-terminal\current\settings\settings.json"
+    if (Test-Path $scoopWtCurrent) { return $scoopWtCurrent }
+
+    $packagesPath = Join-Path $env:LOCALAPPDATA "Packages"
+    $wtPackage = Get-ChildItem -Path $packagesPath -Filter "Microsoft.WindowsTerminal_*" -Directory -ErrorAction SilentlyContinue | Select-Object -First 1
+    if (-not $wtPackage) { return $null }
+
     $settingsPath = Join-Path $wtPackage.FullName "LocalState\settings.json"
     if (-not (Test-Path $settingsPath)) { return $null }
     return $settingsPath
@@ -44,10 +47,10 @@ $guid = [guid]::NewGuid().ToString()
 
 $newProfile = @"
             {
-                "commandline": "$scoopPath\\apps\\pwsh\\current\\pwsh.exe -nologo",
+                "commandline": "$scoopPathEscaped\\apps\\pwsh\\current\\pwsh.exe -nologo",
                 "guid": "{$guid}",
                 "hidden": false,
-                "icon": "$scoopPath\\apps\\pwsh\\current\\pwsh.exe",
+                "icon": "$scoopPathEscaped\\apps\\pwsh\\current\\pwsh.exe",
                 "name": "$ProfileName",
                 "startingDirectory": "%USERPROFILE%"
             }
